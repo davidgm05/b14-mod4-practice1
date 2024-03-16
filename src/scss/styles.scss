@@ -1,0 +1,107 @@
+@use "bootstrap";
+@use "bootstrap-icons";
+
+.svg-color {
+    fill: white;
+}
+
+.toolbar-container {
+    margin-top: 29px;
+    padding: 10px;
+    background-color: #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.botons {
+    display: flex;
+}
+
+.btn-grid {
+    height: 40px;
+    width: 40px;
+    margin-top: 20px;
+}
+
+.btn-row {
+    height: 40px;
+    width: 40px;
+    margin-top: 20px;
+}
+
+.carta {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px;
+    display: inline-block;
+
+
+}
+
+.portada {
+    width: 100%;
+    height: 300px;
+    background-color: #eee; 
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.contenedor {
+    margin-top: 10px;
+}
+
+.titulo {
+    margin: 0;
+}
+
+.descripcion {
+    margin: 5px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
+
+.list-view .col-lg-3,
+.list-view .col-md-4,
+.list-view .col-sm-6 {
+    width: 100%;
+    margin: 0 auto; 
+    display: block; 
+}
+
+.list-view .carta {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px auto;
+    padding: 10px;
+    width: 100%;
+}
+
+.list-view .portada {
+    width: 150px; 
+    height: auto; 
+    margin-right: 20px;
+}
+
+.list-view .contenedor {
+    flex-grow: 1; 
+}
+
+.list-view .titulo {
+    margin: 0;
+    font-size: 18px; 
+}
+
+.list-view .descripcion {
+    margin: 5px 0;
+    font-size: 14px;
+}
