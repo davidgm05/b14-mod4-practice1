@@ -47,4 +47,30 @@ export function addSelectMovieTypeChangeListener() {
         setCurrentMovieListType(selectedMovieType);
     })
 }
+import { getSearchMovieUrl } from "../api/api";
+
+export function addSearchEventListener() {
+    const movieSearchInput = document.getElementById("text-imput") as HTMLInputElement;
+    const movieSearchButton = document.getElementById("text-boton");
+
+    movieSearchButton?.addEventListener('click', async (event) => {
+        event.preventDefault(); // Evitar recarga de la página al hacer click en el botón
+
+        const searchValue = movieSearchInput.value.trim(); // Obtener el valor del input y eliminar espacios en blanco
+
+        if (searchValue) { // Verificar que el valor no esté vacío
+            try {
+                const movies = await getSearchMovieUrl(searchValue);
+                // Aquí puedes hacer algo con los datos obtenidos, como mostrarlos en la interfaz
+                console.log("Películas encontradas:", movies);
+            } catch (error) {
+                console.error("Error al buscar películas:", error);
+                // Manejar el error de acuerdo a tus necesidades
+            }
+        } else {
+            console.log("El valor de búsqueda está vacío.");
+            // Aquí puedes mostrar un mensaje al usuario indicando que debe ingresar un valor de búsqueda
+        }
+    });
+}
 

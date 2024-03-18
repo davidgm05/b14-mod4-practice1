@@ -30,7 +30,6 @@ export async function getSearchMovieUrl(name: string, page = 1) {
 
 
 
-
 function searchMovies(searchText: string) {
     throw new Error('Function not implemented.');
 }
