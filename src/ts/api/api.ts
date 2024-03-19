@@ -28,9 +28,17 @@ export async function getSearchMovieUrl(name: string, page = 1) {
 }
 
 
+// export async function getMovieDetails(movieId) {
+//     let movieDetailsUrl = `${config.baseUrl}movie/${movieId}?api_key=${config.apiKey}&language=${config.langIso}`;
+//     const response = await fetch(movieDetailsUrl);
+//     const data = await response.json();
+//     return movieDetailsMapper(data);
+// }
 
 
-function searchMovies(searchText: string) {
-    throw new Error('Function not implemented.');
-}
+
+
+// function searchMovies(searchText: string) {
+//     throw new Error('Function not implemented.');
+// }
 

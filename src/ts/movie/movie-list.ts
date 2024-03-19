@@ -111,14 +111,14 @@ function showMovieDetails(movie) {
     const detailsContainer = document.createElement("div");
     detailsContainer.classList.add("movie-details");
 
-    //Crear la img
+    // Crear la imagen de portada
     const portadaElement = document.createElement("div");
     portadaElement.classList.add("portada-detail");
     portadaElement.style.backgroundImage = `url(${config.posterBaseUrl + movie.cover})`;
 
-    const contenedorDetail = document.createElement("div");
-    contenedorDetail.classList.add("contenedor-detail");
-        
+    // Crear el contenedor para el detalle de contenido
+    const contentDetailContainer = document.createElement("div");
+    contentDetailContainer.classList.add("content-detail");
 
     // Crear elementos HTML para mostrar los detalles de la película
     const titleElement = document.createElement("h2");
@@ -130,25 +130,39 @@ function showMovieDetails(movie) {
     descriptionElement.className = "descripcion-detail";
 
     const releaseDateElement = document.createElement("p");
-    releaseDateElement.textContent = movie.release_date;
+    releaseDateElement.textContent = "Release Date: " + movie.release_date;
     releaseDateElement.className = "fecha-detail";
 
     const ratingElement = document.createElement("p");
     ratingElement.textContent = "Rating: " + movie.rating;
     ratingElement.className = "ratin-detail";
 
+    const starsElement = document.createElement("div");
+    starsElement.className = "stars-detail";
+    for (let i = 0; i < movie.rating; i++) {
+        const starIcon = document.createElement("span");
+        starIcon.textContent = "★";
+        starsElement.appendChild(starIcon);
+    }
+
+    // Crear la imagen de fondo (background)
+    const backgroundElement = document.createElement("div");
+    backgroundElement.classList.add("background-detail");
+    backgroundElement.style.backgroundImage = `url(${movie.background})`;
+
     // Agregar los elementos al contenedor de detalles
     detailsContainer.appendChild(portadaElement);
-    detailsContainer.appendChild(contenedorDetail);
-    contenedorDetail.appendChild(titleElement);
-    contenedorDetail.appendChild(descriptionElement);
-    contenedorDetail.appendChild(releaseDateElement);
-    contenedorDetail.appendChild(ratingElement);
+    detailsContainer.appendChild(contentDetailContainer);
+    contentDetailContainer.appendChild(titleElement);
+    contentDetailContainer.appendChild(descriptionElement);
+    contentDetailContainer.appendChild(releaseDateElement);
+    contentDetailContainer.appendChild(ratingElement);
+    contentDetailContainer.appendChild(starsElement);
 
     // Agregar el contenedor de detalles al elemento 'app'
     appElement.appendChild(detailsContainer);
+    appElement.appendChild(backgroundElement);
 }
-
 
 
 

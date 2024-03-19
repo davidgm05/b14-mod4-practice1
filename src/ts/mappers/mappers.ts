@@ -16,17 +16,25 @@ export function filterMoviesData(movies) {
     })
 }
 
-export function movieListMapper(movieData): Movie {
+export function movieListMapper(movieData) {
     return movieData.map(movie => ({
         id: movie.id,
         title: movie.title,
         description: movie.overview,
         cover: movie.poster_path,
+        background: `https://image.tmdb.org/t/p/original${movie.backdrop_path}`,
         year: movie.release_date.split("-").shift(),
         rating: movie.vote_average,
-
-    }))
+    }));
 }
+
+export function castMapper(castData) {
+    return castData.map(actor => ({
+        name: actor.name,
+        character: actor.character
+    }));
+}
+
 
 export interface Movie {
     id: number;
